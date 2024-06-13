@@ -1,20 +1,19 @@
 function solution(n, arr1, arr2) {
-    var answer = [];
-    
-    // arr1, arr2의 요소를 순회하며 2진법으로 변환하고
-    // 변환한 것을 다시 순회하며 체크
+    const answer = [];
     
     for(let i=0; i<n; i++) {
+        const lineArray = [];
         const binary = (arr1[i] | arr2[i]).toString(2);
-        const arr = [];
-        for(let j=binary.length-n; j<binary.length; j++){
-            if(binary[j] === '1'){
-                arr.push('#')
+        
+        for(let j=binary.length-n; j<binary.length; j++) {
+            if(binary[j] === '1') {
+                lineArray.push('#');
             } else {
-                arr.push(' ');
+                lineArray.push(' ');
             }
         }
-        answer.push(arr.join(''));
+        answer.push(lineArray.join(''))
     }
+    console.log(answer)
     return answer;
 }
