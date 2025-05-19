@@ -1,10 +1,7 @@
-function solution(arr)
-{
-  const output = [];
-    for(let i=0; i<arr.length; i++) {
-        if(arr[i] !== arr[i+1]) {
-            output.push(arr[i]);
-        }
-    }
+function solution(arr) {
+    const output = [];
+    const duplicatingNumber = arr.filter((currentNumber, index)=> {
+        currentNumber !== arr[index+1] && output.push(currentNumber);
+    });
     return output;
 }
